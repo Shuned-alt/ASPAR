@@ -5,7 +5,9 @@ This Python-based system aims to assign courses to rooms and faculty members bas
 
 Features:
 -Automatically map courses to available rooms and their respective time slots as well as tag available faculty.
+
 -Outputs an Excel file where it has the course, the room assignment and its respective time slot for the week, and a tagged faculty if possible.
+
 -The program will note if there are no available rooms for the course.
 -The program will note if there are no available teachers for the course.
 -The program only has functionality for the following constraints:
