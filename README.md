@@ -4,35 +4,35 @@ ASPAR: ACADEMIC SCHEDULE PLANNING AUTOMATED RECOMMENDER SYSTEM (v1.3)
 This Python-based system aims to assign courses to rooms and faculty members based on their availability and specific criteria such as room capacity, course duration, and faculty availability. The script takes input data from Excel files containing information about courses, rooms, and faculty members.
 
 Features:
-Automatically map courses to available rooms and their respective time slots as well as tag available faculty.
-Outputs an Excel file where it has the course, the room assignment and its respective time slot for the week, and a tagged faculty if possible.
-The program will note if there are no available rooms for the course.
-The program will note if there are no available teachers for the course.
-The program only has functionality for the following constraints:
-One room and timeslot per section.
-One faculty per section.
-Using proper room assignments for lab requirements.
-Room assignments that can accommodate the max number of students per section
-The maximum number of units a faculty can be assigned to.
-No faculty should be assigned 3 schedules in a row.
-Faculty cannot be assigned into schedules where they are not available.
-The program strictly needs the correct data listed in the data requirements.
+-Automatically map courses to available rooms and their respective time slots as well as tag available faculty.
+-Outputs an Excel file where it has the course, the room assignment and its respective time slot for the week, and a tagged faculty if possible.
+-The program will note if there are no available rooms for the course.
+-The program will note if there are no available teachers for the course.
+-The program only has functionality for the following constraints:
+-One room and timeslot per section.
+-One faculty per section.
+-Using proper room assignments for lab requirements.
+-Room assignments that can accommodate the max number of students per section
+-The maximum number of units a faculty can be assigned to.
+-No faculty should be assigned 3 schedules in a row.
+-Faculty cannot be assigned into schedules where they are not available.
+-The program strictly needs the correct data listed in the data requirements.
 
 Functionality:
-The code is an implementation of an academic scheduling problem, where a schedule is generated for different courses, rooms, and faculties based on their respective schedules, capacities, and availability. 
-The function ASPAR() loads datasets of courses, rooms, and faculties, iterates over each course, and assigns it to a suitable room, timeslot, and faculty member, if available.
-The function defines two helper functions:
-free_timeslot() to find a free slot for a course given a start and end time, course duration, and room schedule.
-has_consecutive_schedules() to check if a faculty member has two consecutive schedules on the same day.
-is_time_available() to check if the faculty’s availability can accommodate the scheduled time slot for the course.
+-The code is an implementation of an academic scheduling problem, where a schedule is generated for different courses, rooms, and faculties based on their respective schedules, capacities, and availability. 
+-The function ASPAR() loads datasets of courses, rooms, and faculties, iterates over each course, and assigns it to a suitable room, timeslot, and faculty member, if available.
+-The function defines two helper functions:
+  -free_timeslot() to find a free slot for a course given a start and end time, course duration, and room schedule.
+  -has_consecutive_schedules() to check if a faculty member has two consecutive schedules on the same day.
+  -is_time_available() to check if the faculty’s availability can accommodate the scheduled time slot for the course.
 
-The function then cleans the input datasets into the proper features to be used in the mapping algorithm. 
-The function then initializes the output dataframe and loops through each course then assigns the proper duration of the course based on the units and the lab requirement of the course 
-Then the function loops through each room and finds a proper room based on the lab requirements and the max occupancy for the course section. 
-Then it loops through the faculty to assign a faculty that can teach the course and has an available schedule.
-The code assigns only one faculty member per course, and the output is appended to the output dataframe. 
-If a suitable faculty member is not available, the course is assigned to "No faculty available," and if a suitable room is not available, the course is assigned to "No room available." 
-The output of the program is an Excel file of the output dataframe.
+-The function then cleans the input datasets into the proper features to be used in the mapping algorithm. 
+-The function then initializes the output dataframe and loops through each course then assigns the proper duration of the course based on the units and the lab requirement of the course 
+-Then the function loops through each room and finds a proper room based on the lab requirements and the max occupancy for the course section. 
+-Then it loops through the faculty to assign a faculty that can teach the course and has an available schedule.
+-The code assigns only one faculty member per course, and the output is appended to the output dataframe. 
+-If a suitable faculty member is not available, the course is assigned to "No faculty available," and if a suitable room is not available, the course is assigned to "No room available." 
+-The output of the program is an Excel file of the output dataframe.
 
 Requirements:
 The system is designed to run on Windows and can run on minimum computer specifications. The installer will install all the dependencies needed to run the software.
